@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #250B58;
+}
+.card{
+    width: 340px;
+    height: 170px;
+    float: left;
+    perspective: 1000px;
+}
+.card .fundo{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear;
+    filter: grayscale(100%);
+}
+.card .fundo h2{
+    position: absolute;
+    z-index: 1;
+    color: white;
+}
+.card .frente{
+    position: absolute;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    transition: all .4s linear;
+}
+.card:hover .frente{
+    transform: rotateY(-180deg);
+    cursor: pointer;
+}
+.card:hover .fundo{
+    transform: rotateY(0deg);
+}
